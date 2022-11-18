@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "ToDo API",
-        Description = "A .Net Core (7,0) Web API and Angular application for managing ToDo items",
+        Description = "A .Net Core (7.0) Web API and Angular application for managing ToDo items",
         Contact = new OpenApiContact
         {
             Name = "Ahmet Burhan Şimşek",
