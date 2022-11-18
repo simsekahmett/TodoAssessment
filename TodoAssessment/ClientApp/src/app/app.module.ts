@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
+import { CreateEntryComponent } from './create-entry/create-entry.component';
+import { UpdateEntryComponent } from './update-entry/update-entry.component';
+import { ListEntriesComponent } from './list-entries/list-entries.component';
+import { SafePipe } from './pipes/safe-pipe';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    TodoAppComponent
+    TodoAppComponent,
+    CreateEntryComponent,
+    UpdateEntryComponent,
+    ListEntriesComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,6 +35,9 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'create', component: CreateEntryComponent },
+      { path: 'update', component: UpdateEntryComponent },
+      { path: 'list', component: ListEntriesComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'todo-app', component: TodoAppComponent }

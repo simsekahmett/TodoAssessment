@@ -1,0 +1,55 @@
+<h5>Update Todo Entry</h5>
+<p *ngIf="!entries?.length"><em>Loading...</em></p>
+
+<div class="col-lg-6 col-md-12">
+	<div class="list-group w-auto">
+		<div class="list-group-item gap-3 py-3">
+			<div class="row">
+				<div class="col-md-3">
+					<p>Select Entry to update:</p>
+				</div>
+				<div class="col-md-9">
+					<select class="form-select" [ngModel]="selectedEntry" (ngModelChange)="onChange($event)">
+						<option *ngFor="let entry of entries" [ngValue]="entry">
+							{{entry.title}}
+						</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="list-group-item gap-3 py-3">
+			<div class="row">
+				<div class="col-md-3">
+					<p>Due Date:</p>
+				</div>
+				<div class="col-md-9">
+					<input type="datetime-local" class="form-control" [ngModel]="selectedEntry.dueDate | date:'yyyy-MM-ddTHH:mm'">
+				</div>
+			</div>
+		</div>
+
+		<div class="list-group-item gap-3 py-3">
+			<div class="row">
+				<div class="col-md-3">
+					<p>Status:</p>
+				</div>
+				<div class="col-md-9">
+					<select class="form-select" [ngModel]="selectedStatus">
+						<option [ngValue]="0">Pending</option>
+						<option [ngValue]="1">Overdue</option>
+						<option [ngValue]="2">Done</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="list-group-item gap-3 py-3">
+			<div class="row">
+				<div class="d-flex justify-content-end align-items-end">
+					<input class="btn btn-primary" type="submit" value="Update">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

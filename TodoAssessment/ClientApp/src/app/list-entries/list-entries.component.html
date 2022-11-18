@@ -1,0 +1,19 @@
+<h5>List Todo Entries</h5>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="entries.length">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>CreateDate</th>
+			<th>DueDate</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let entry of entries">
+			<td>{{ entry.title }}</td>
+			<td>{{ getFormattedDateText(entry.createDate) }}</td>
+			<td>{{ getFormattedDateText(entry.dueDate) }}</td>
+			<td>{{ getStatusText(entry.status) }}</td>
+		</tr>
+	</tbody>
+</table>
