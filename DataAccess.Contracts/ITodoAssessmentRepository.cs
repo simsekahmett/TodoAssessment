@@ -1,11 +1,13 @@
 ﻿using System;
+using Shared.Models;
+
 namespace DataAccess.Contracts
 {
-	public class ITodoAssessmentRepository
-	{
-		public ITodoAssessmentRepository()
-		{
-		}
-	}
+    public interface ITodoAssessmentRepository
+    {
+        public List<TodoEntry> GetAllTodoEntries();
+        public bool AddTodoEntry(TodoEntry entry);
+        public bool UpdateTodoEntry(TodoEntry entry);
+    }
 }
 
