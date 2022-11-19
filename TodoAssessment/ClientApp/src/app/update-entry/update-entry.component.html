@@ -24,7 +24,7 @@
 					<p>Due Date:</p>
 				</div>
 				<div class="col-md-9">
-					<input type="datetime-local" class="form-control" [ngModel]="selectedEntry.dueDate | date:'yyyy-MM-ddTHH:mm'">
+					<input type="datetime-local" class="form-control" [ngModel]="selectedEntry.dueDate | date:'yyyy-MM-ddTHH:mm'" [(ngModel)]="selectedDate">
 				</div>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 					<p>Status:</p>
 				</div>
 				<div class="col-md-9">
-					<select class="form-select" [ngModel]="selectedStatus">
+					<select class="form-select" [(ngModel)]="selectedStatus">
 						<option [ngValue]="0">Pending</option>
 						<option [ngValue]="1">Overdue</option>
 						<option [ngValue]="2">Done</option>
@@ -46,8 +46,13 @@
 
 		<div class="list-group-item gap-3 py-3">
 			<div class="row">
-				<div class="d-flex justify-content-end align-items-end">
-					<input class="btn btn-primary" type="submit" value="Update">
+				<div class="col-md-3">
+					<small id="dueDateHelp" class="form-text text-muted">{{resultText}}</small>
+				</div>
+				<div class="col-md-9">
+					<div class="d-flex justify-content-end align-items-end">
+						<input class="btn btn-primary" type="submit" value="Update" (click)="updateTodoEntry()">
+					</div>
 				</div>
 			</div>
 		</div>

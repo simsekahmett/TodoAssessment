@@ -13,7 +13,7 @@ export class ListEntriesComponent {
 	private httpClient: HttpClient;
 	private baseUrl: string;
 
-	getFormattedDateText(dueDate: Date) {
+	getFormattedDateText(dueDate: string) {
 		return formatDate(dueDate, 'dd-MM-yyyy HH:mm', this.locale);
 	}
 
