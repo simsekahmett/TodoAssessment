@@ -24,6 +24,11 @@ namespace TodoAssessment.Controllers
             repositoryHelper = new RepositoryHelper(todoAssessmentRepository);
         }
 
+        /// <summary>
+        /// Get all todo entries
+        /// </summary>
+        /// <param></param>
+        /// <returns>List of todo entries</returns>
         [HttpGet]
         [Route("all")]
         public List<TodoEntry> GetAllTodoEntries()
@@ -31,6 +36,11 @@ namespace TodoAssessment.Controllers
             return repositoryHelper.GetAllTodoEntries();
         }
 
+        /// <summary>
+        /// Get all todo entries by status
+        /// </summary>
+        /// <param name="status">int 0,1,2 [Pending, Overdue, Done]</param>
+        /// <returns>List of todo entries</returns>
         [HttpGet]
         [Route("status")]
         public List<TodoEntry> GetTodoEntriesByStatus([FromQuery] int status)
@@ -38,6 +48,12 @@ namespace TodoAssessment.Controllers
             return repositoryHelper.GetTodoEntriesByStatus(status);
         }
 
+
+        /// <summary>
+        /// Add new todo entry
+        /// </summary>
+        /// <param name="entry"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("add")]
         public IActionResult AddTodoEntry([FromBody] TodoEntry entry)
@@ -48,6 +64,11 @@ namespace TodoAssessment.Controllers
                 return StatusCode(500);
         }
 
+        /// <summary>
+        /// Update a todo entry
+        /// </summary>
+        /// <param name="entry">Todo entry to be updated</param>
+        /// <returns></returns>
         [HttpPatch]
         [Route("update")]
         public IActionResult UpdateTodoEntry([FromBody] TodoEntry entry)

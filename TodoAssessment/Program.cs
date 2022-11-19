@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using DataAccess.Contracts;
 using DataAccess.Implementation;
 using Microsoft.OpenApi.Models;
@@ -22,6 +23,10 @@ builder.Services.AddSwaggerGen(options =>
             Url = new Uri("https://github.com/simsekahmett")
         }
     });
+
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
 });
 
 
