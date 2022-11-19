@@ -1,20 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1704.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoAssessment", "TodoAssessment\TodoAssessment.csproj", "{2731052C-B328-445C-9247-878D1B142C1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoAssessment", "TodoAssessment\TodoAssessment.csproj", "{2731052C-B328-445C-9247-878D1B142C1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Contracts", "DataAccess.Contracts\DataAccess.Contracts.csproj", "{D4C868F5-BB8F-48C0-B63B-10460E15CF2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Contracts", "DataAccess.Contracts\DataAccess.Contracts.csproj", "{D4C868F5-BB8F-48C0-B63B-10460E15CF2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Implementation", "DataAccess.Implementation\DataAccess.Implementation.csproj", "{82558D3B-1AAD-4889-B7C0-2974C7BB096F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Implementation", "DataAccess.Implementation\DataAccess.Implementation.csproj", "{82558D3B-1AAD-4889-B7C0-2974C7BB096F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Models", "Shared.Models\Shared.Models.csproj", "{B162E492-772B-493A-997C-2FE8BBACE90B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Models", "Shared.Models\Shared.Models.csproj", "{B162E492-772B-493A-997C-2FE8BBACE90B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44EE12A9-21ED-45B2-881E-3732636DC4B7}"
 	ProjectSection(SolutionItems) = preProject
 		Interview_Task_.NET.pdf = Interview_Task_.NET.pdf
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoAssessment.UnitTests", "TodoAssessment.UnitTests\TodoAssessment.UnitTests.csproj", "{DB6855B9-42FD-4537-834B-3277C423040B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{B162E492-772B-493A-997C-2FE8BBACE90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B162E492-772B-493A-997C-2FE8BBACE90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B162E492-772B-493A-997C-2FE8BBACE90B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB6855B9-42FD-4537-834B-3277C423040B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6855B9-42FD-4537-834B-3277C423040B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6855B9-42FD-4537-834B-3277C423040B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6855B9-42FD-4537-834B-3277C423040B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
