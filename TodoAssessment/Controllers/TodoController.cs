@@ -33,9 +33,9 @@ namespace TodoAssessment.Controllers
 
         [HttpGet]
         [Route("status")]
-        public IActionResult GetTodoEntryByStatus(string status)
+        public List<TodoEntry> GetTodoEntriesByStatus([FromQuery] int status)
         {
-            return Ok();
+            return repositoryHelper.GetTodoEntriesByStatus(status);
         }
 
         [HttpPost]

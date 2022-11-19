@@ -28,6 +28,14 @@ namespace DataAccess.Implementation
             }
         }
 
+        public List<TodoEntry> GetTodoEntriesByStatus(int status)
+        {
+            using (var context = new TodoDbContext())
+            {
+                return context.Entries.Where(e => (int)e.Status == status).ToList();
+            }
+        }
+
         public bool AddTodoEntry(TodoEntry todoEntry)
         {
             try

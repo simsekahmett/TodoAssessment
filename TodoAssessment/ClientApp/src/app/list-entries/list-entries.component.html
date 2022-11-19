@@ -1,19 +1,50 @@
 <h5>List Todo Entries</h5>
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="entries.length">
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>CreateDate</th>
-			<th>DueDate</th>
-			<th>Status</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let entry of entries">
-			<td>{{ entry.title }}</td>
-			<td>{{ getFormattedDateText(entry.createDate) }}</td>
-			<td>{{ getFormattedDateText(entry.dueDate) }}</td>
-			<td>{{ getStatusText(entry.status) }}</td>
-		</tr>
-	</tbody>
-</table>
+<div class="row">
+	<div class="col-sm-6 col-md-6 col-lg-3">
+		<div class="form-check">
+			<input type="radio" class="form-check-input" id="radioButtonForAll" name="radioButton" value="all" (change)="radioButtonGetAllEvent($event)" />
+			<label class="form-check-label" for="radioButtonForAll">All</label>
+		</div>
+	</div>
+	<div class="col-sm-6 col-md-6 col-lg-3">
+		<div class="form-check">
+			<input type="radio" class="form-check-input" id="radioButtonForPending" name="radioButton" value="pending" (change)="radioButtonGetPendingEvent($event)" />
+			<label class="form-check-label" for="radioButtonForPending">Pending</label>
+		</div>
+	</div>
+	<div class="col-sm-6 col-md-6 col-lg-3">
+		<div class="form-check">
+			<input type="radio" class="form-check-input" id="radioButtonForOverDue" name="radioButton" value="overdue" (change)="radioButtonGetOverDueEvent($event)" />
+			<label class="form-check-label" for="radioButtonForOverDue">Overdue</label>
+		</div>
+	</div>
+	<div class="col-sm-6 col-md-6 col-lg-3">
+		<div class="form-check">
+			<input type="radio" class="form-check-input" id="radioButtonForDone" name="radioButton" value="done" (change)="radioButtonGetDoneEvent($event)" />
+			<label class="form-check-label" for="radioButtonForDone">Done</label>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="entries.length">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>CreateDate</th>
+					<th>DueDate</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let entry of entries">
+					<td>{{ entry.title }}</td>
+					<td>{{ getFormattedDateText(entry.createDate) }}</td>
+					<td>{{ getFormattedDateText(entry.dueDate) }}</td>
+					<td>{{ getStatusText(entry.status) }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -10,7 +10,8 @@ import { formatDate } from '@angular/common';
 })
 export class ListEntriesComponent {
 	public entries: TodoEntry[] = [];
-
+	private httpClient: HttpClient;
+	private baseUrl: string;
 
 	getFormattedDateText(dueDate: Date) {
 		return formatDate(dueDate, 'dd-MM-yyyy HH:mm', this.locale);
@@ -29,8 +30,35 @@ export class ListEntriesComponent {
 		}
 	}
 
+	radioButtonGetAllEvent(event: any) {
+		console.log(event);
+		this.httpClient.get<TodoEntry[]>(this.baseUrl + 'todo/all').subscribe(result => {
+			this.entries = result;
+		}, error => console.error(error));
+	}
+
+	radioButtonGetPendingEvent(event: any) {
+		this.httpClient.get<TodoEntry[]>(this.baseUrl + 'todo/status?status=0').subscribe(result => {
+			this.entries = result;
+		}, error => console.error(error));
+	}
+
+	radioButtonGetOverDueEvent(event: any) {
+		this.httpClient.get<TodoEntry[]>(this.baseUrl + 'todo/status?status=1').subscribe(result => {
+			this.entries = result;
+		}, error => console.error(error));
+	}
+
+	radioButtonGetDoneEvent(event: any) {
+		this.httpClient.get<TodoEntry[]>(this.baseUrl + 'todo/status?status=2').subscribe(result => {
+			this.entries = result;
+		}, error => console.error(error));
+	}
+
 	constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, @Inject(LOCALE_ID) private locale: string) {
-		http.get<TodoEntry[]>(baseUrl + 'todo/all').subscribe(result => {
+		this.httpClient = http;
+		this.baseUrl = baseUrl;
+		this.httpClient.get<TodoEntry[]>(this.baseUrl + 'todo/all').subscribe(result => {
 			this.entries = result;
 		}, error => console.error(error));
 	}

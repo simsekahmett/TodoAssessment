@@ -18,6 +18,11 @@ namespace TodoAssessment.Helpers
             return todoAssessmentRepository.GetAllTodoEntries();
         }
 
+        public List<TodoEntry> GetTodoEntriesByStatus(int status)
+        {
+            return todoAssessmentRepository.GetTodoEntriesByStatus(status);
+        }
+
         public bool AddTodoEntry(TodoEntry entry)
         {
             return todoAssessmentRepository.AddTodoEntry(entry);
