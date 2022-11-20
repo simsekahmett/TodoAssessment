@@ -20,7 +20,7 @@ export class UpdateEntryComponent {
 	onChange(entry: any) {
 		this.selectedEntry = entry;
 		this.selectedStatus = this.selectedEntry.status;
-		this.selectedDate = this.selectedEntry.dueDate;
+		this.selectedDate = formatDate(this.selectedEntry.dueDate, 'yyyy-MM-ddTHH:mm', this.locale);
 	}
 
 	updateTodoEntry() {
@@ -30,7 +30,7 @@ export class UpdateEntryComponent {
 		entry.title = this.selectedEntry.title;
 		entry.createDate = this.selectedEntry.createDate;
 		entry.status = this.selectedStatus;
-		entry.dueDate = formatDate(this.selectedDate, 'yyyy-MM-ddTHH:mm:ss', this.locale);
+		entry.dueDate = formatDate(this.selectedDate, 'yyyy-MM-ddTHH:mm', this.locale);
 
 		this.httpClient.patch(this.baseUrl + 'todo/update', entry, { observe: 'response' }).subscribe(result => {
 			if (result.status == 200)
@@ -51,7 +51,7 @@ export class UpdateEntryComponent {
 
 			if (this.entries.length > 0) {
 				this.selectedEntry = this.entries[0];
-				this.selectedDate = this.entries[0].dueDate;
+				this.selectedDate = formatDate(this.entries[0].dueDate, 'yyyy-MM-ddTHH:mm', this.locale);
 				this.selectedStatus = this.entries[0].status;
 			}
 		}, error => console.error(error));

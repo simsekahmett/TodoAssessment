@@ -37,7 +37,7 @@
 				<div class="col-md-9">
 					<select class="form-select" [(ngModel)]="selectedStatus">
 						<option [ngValue]="0">Pending</option>
-						<option [ngValue]="1">Overdue</option>
+						<option disabled [ngValue]="1">Overdue</option>
 						<option [ngValue]="2">Done</option>
 					</select>
 				</div>
