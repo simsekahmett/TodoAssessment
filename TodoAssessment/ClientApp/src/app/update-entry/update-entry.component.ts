@@ -18,9 +18,9 @@ export class UpdateEntryComponent {
 	private baseUrl: string;
 
 	onChange(entry: any) {
-		console.log(entry);
 		this.selectedEntry = entry;
 		this.selectedStatus = this.selectedEntry.status;
+		this.selectedDate = this.selectedEntry.dueDate;
 	}
 
 	updateTodoEntry() {
@@ -49,8 +49,11 @@ export class UpdateEntryComponent {
 			this.entries = result;
 
 
-			if (this.entries.length > 0)
+			if (this.entries.length > 0) {
 				this.selectedEntry = this.entries[0];
+				this.selectedDate = this.entries[0].dueDate;
+				this.selectedStatus = this.entries[0].status;
+			}
 		}, error => console.error(error));
 
 	}
