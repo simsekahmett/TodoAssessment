@@ -24,7 +24,7 @@
 					<p>Due Date:</p>
 				</div>
 				<div class="col-md-9">
-					<input type="datetime-local" class="form-control" [ngModel]="selectedDate | date:'yyyy-MM-ddTHH:mm'">
+					<input type="datetime-local" class="form-control" [ngModel]="selectedDate | date:'yyyy-MM-ddTHH:mm'" [(ngModel)]="selectedDate">
 				</div>
 			</div>
 		</div>
