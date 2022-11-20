@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44EE12A9-21ED-45B2-881E-3732636DC4B7}"
 	ProjectSection(SolutionItems) = preProject
 		Interview_Task_.NET.pdf = Interview_Task_.NET.pdf
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoAssessment.UnitTests", "TodoAssessment.UnitTests\TodoAssessment.UnitTests.csproj", "{DB6855B9-42FD-4537-834B-3277C423040B}"
