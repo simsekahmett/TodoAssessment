@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 using Shared.Models;
 using TodoAssessment.Helpers;
+using TodoAssessment.Utils;
 using TaskStatus = Shared.Models.TaskStatus;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -33,7 +34,7 @@ namespace TodoAssessment.Controllers
         [Route("all")]
         public List<TodoEntry> GetAllTodoEntries()
         {
-            return repositoryHelper.GetAllTodoEntries();
+            return OverdueCalculator.CalculateTodoOverdueStatus(repositoryHelper.GetAllTodoEntries());
         }
 
         /// <summary>
@@ -45,7 +46,7 @@ namespace TodoAssessment.Controllers
         [Route("status")]
         public List<TodoEntry> GetTodoEntriesByStatus([FromQuery] int status)
         {
-            return repositoryHelper.GetTodoEntriesByStatus(status);
+            return OverdueCalculator.CalculateTodoOverdueStatus(repositoryHelper.GetTodoEntriesByStatus(status));
         }
 
 
