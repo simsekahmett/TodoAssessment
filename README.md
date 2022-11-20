@@ -9,6 +9,10 @@
 
 ## API Reference
 
+> **Note**
+> Sample postman requests can be found here >>
+[Postman sample collection](https://api.postman.com/collections/6313898-0abaaffe-895b-4ed9-b2bd-bec05227058b?access_key=PMAT-01GJATGQV391NRQ5ZMENTVCCKY)
+
 #### Get all todo entries
 
 | Request Type | Request Endpoint     | Description                |
@@ -80,11 +84,6 @@ Request details:
     "status": 0
   }
 ```
-
-## Appendix
-
-Sample postman requests can be found here >>
-[Postman sample collection](https://api.postman.com/collections/6313898-0abaaffe-895b-4ed9-b2bd-bec05227058b?access_key=PMAT-01GJATGQV391NRQ5ZMENTVCCKY)
 
 ## Screenshots
 
