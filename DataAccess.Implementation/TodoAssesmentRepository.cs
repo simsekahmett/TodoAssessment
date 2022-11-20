@@ -85,26 +85,33 @@ namespace DataAccess.Implementation
             for (int i = 0; i < 10; i++)
             {
                 var status = TaskStatus.Pending;
+                var dueDate = DateTime.Now;
+                var createDate = DateTime.Now;
                 switch (i % 3)
                 {
                     case 0:
                         status = TaskStatus.Pending;
+                        dueDate = DateTime.Now.AddDays(random.Next(3, 8));
                         break;
 
                     case 1:
                         status = TaskStatus.Overdue;
+                        createDate = DateTime.Now.AddDays(-10);
+                        dueDate = DateTime.Now.AddDays(-1);
                         break;
 
                     case 2:
                         status = TaskStatus.Done;
+                        createDate = DateTime.Now.AddDays(-10);
+                        dueDate = DateTime.Now.AddDays(-1);
                         break;
                 }
 
                 entryList.Add(new TodoEntry()
                 {
                     Id = Guid.NewGuid(),
-                    CreateDate = DateTime.Now,
-                    DueDate = DateTime.Now.AddDays(random.Next(3, 8)),
+                    CreateDate = createDate,
+                    DueDate = dueDate,
                     Status = status,
                     Title = "test title " + i
                 });
