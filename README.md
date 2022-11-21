@@ -7,6 +7,11 @@
  - [Entity Framework Core - InMemory Database](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli)
  - [Swashbuckle Swagger Documentation for API](https://learn.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-7.0&tabs=visual-studio)
 
+## Prerequisites
+  
+  - [NodeJS for Angular frontend application](https://nodejs.org/en/download/)
+  - [.Net SDK 7.0 for backend application](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+
 ## API Reference
 
 > **Note**
