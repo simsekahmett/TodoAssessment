@@ -22,17 +22,31 @@ namespace DataAccess.Implementation
 
         public List<TodoEntry> GetAllTodoEntries()
         {
-            using (var context = new TodoDbContext())
+            try
             {
-                return context.Entries.ToList();
+                using (var context = new TodoDbContext())
+                {
+                    return context.Entries.ToList();
+                }
+            }
+            catch
+            {
+                return new List<TodoEntry>();
             }
         }
 
         public List<TodoEntry> GetTodoEntriesByStatus(int status)
         {
-            using (var context = new TodoDbContext())
+            try
             {
-                return context.Entries.Where(e => (int)e.Status == status).ToList();
+                using (var context = new TodoDbContext())
+                {
+                    return context.Entries.Where(e => (int)e.Status == status).ToList();
+                }
+            }
+            catch
+            {
+                return new List<TodoEntry>();
             }
         }
 
@@ -73,7 +87,7 @@ namespace DataAccess.Implementation
             }
             catch
             {
-                throw;
+                return false;
             }
         }
 
